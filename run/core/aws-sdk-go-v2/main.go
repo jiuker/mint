@@ -1096,7 +1096,7 @@ func testGetObjectAttributesMultipart(ctx context.Context, s3Client *s3.Client) 
 	}
 
 	if attrResp.ObjectParts.TotalPartsCount != nil && *attrResp.ObjectParts.TotalPartsCount != 3 {
-		failureLog(function, args, startTime, "", fmt.Sprintf("AWS SDK Go V2 Parts array mismatch: expected 3 parts, got %d", *attrResp.ObjectParts.TotalPartsCount), errors.New("parts array mismatch")).Fatal()
+		failureLog(function, args, startTime, "", fmt.Sprintf("AWS SDK Go V2 TotalPartsCount: expected 3 parts, got %d", *attrResp.ObjectParts.TotalPartsCount), errors.New("parts array mismatch")).Fatal()
 		return
 	}
 
